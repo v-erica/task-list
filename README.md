@@ -29,9 +29,10 @@ Ref: users.id < tasks.user_id [delete: cascade]
 
 </details>
 
-1. Create a new Postgres database named `tasklist`.
-2. Create tables in `schema.sql` according to the schema above.
-3. Seed the database with at least 1 user owning at least 3 tasks.
+<!-- 1. Create a new Postgres database named `tasklist`.
+2. Create tables in `schema.sql` according to the schema above. -->
+
+<!-- 3. Seed the database with at least 1 user owning at least 3 tasks. -->
 
 ## API
 

@@ -9,5 +9,15 @@ await db.end();
 console.log("🌱 Database seeded.");
 
 async function seed() {
-  // TODO
+  const users = [{ username: "volivos", password: "password" }];
+  const tasks = [];
+
+  for (const user of users) {
+    const createdUser = await createUser(user.username, user.password);
+
+    for (let i = 1; i <= 3; i++) {
+      const task = await createTask("task_" + i, false, createdUser.id);
+      tasks.push(task);
+    }
+  }
 }
