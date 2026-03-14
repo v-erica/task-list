@@ -13,3 +13,34 @@ export async function createUser(username, password) {
   } = await db.query(sql, [username, hashedPassword]);
   return user;
 }
+
+export async function getUserByUserAndPw(username, password) {
+  const sql = `
+        select *
+        from users
+        where username = $1;`;
+
+  const {
+    rows: [user],
+  } = await db.query(sql, [username]);
+
+  if (!user) return null;
+
+  const isValid = await bcrypt.compare(password, user.password);
+
+  if (!isValid) return null;
+
+  return user;
+}
+
+export async function getUserById(userId) {
+  const sql = `
+        select *
+        from users
+        where id = $1;`;
+
+  const {
+    rows: [user],
+  } = await db.query(sql, [userId]);
+  return user;
+}

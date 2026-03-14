@@ -42,15 +42,15 @@ The 🔒lock icon next to a route indicates that it must be a protected route.
 A user can only access that route by attaching a valid token to their request.
 If a valid token is not provided, immediately send a 401 Unauthorized error.
 
-`/users` router
+<!-- `/users` router -->
 
-- `POST /users/register`
-  - sends 400 if request body is missing username or password
-  - creates a new user with the provided credentials and sends a token
-  - the password should be hashed in the database
-- `POST /users/login`
-  - sends 400 if request body is missing username or password
-  - sends a token if the provided credentials are valid
+<!-- - `POST /users/register` -->
+  <!-- - sends 400 if request body is missing username or password -->
+  <!-- - creates a new user with the provided credentials and sends a token -->
+  <!-- - the password should be hashed in the database -->
+<!-- - `POST /users/login` -->
+  <!-- - sends 400 if request body is missing username or password -->
+  <!-- - sends a token if the provided credentials are valid -->
 
 `/tasks` router
 

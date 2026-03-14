@@ -9,7 +9,7 @@ await db.end();
 console.log("🌱 Database seeded.");
 
 async function seed() {
-  const users = [{ username: "volivos", password: "password" }];
+  const users = [{ username: "volivos", password: "Password" }];
   const tasks = [];
 
   for (const user of users) {

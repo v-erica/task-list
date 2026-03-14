@@ -2,6 +2,16 @@ import express from "express";
 const app = express();
 export default app;
 
+import morgan from "morgan";
+
+import usersRouter from "./api/users.js";
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(morgan("dev"));
+
+app.use("/users", usersRouter);
+
 app.use((err, req, res, next) => {
   switch (err.code) {
     // Invalid type
