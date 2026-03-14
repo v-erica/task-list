@@ -25,6 +25,8 @@ router.post(
     const { username, password } = req.body;
 
     const user = await getUserByUserAndPw(username, password);
+    if (user === null)
+      return res.status(401).send("Incorrect credentials provided.");
     const token = await createToken(user);
     res.status(200).send(token);
   },

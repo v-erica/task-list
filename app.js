@@ -5,12 +5,17 @@ export default app;
 import morgan from "morgan";
 
 import usersRouter from "./api/users.js";
+import getUserFromToken from "./middleware/getUserFromToken.js";
+import tasksRouter from "./api/tasks.js";
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan("dev"));
 
 app.use("/users", usersRouter);
+
+app.use(getUserFromToken);
+app.use("/tasks", tasksRouter);
 
 app.use((err, req, res, next) => {
   switch (err.code) {

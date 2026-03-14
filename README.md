@@ -54,11 +54,14 @@ If a valid token is not provided, immediately send a 401 Unauthorized error.
 
 `/tasks` router
 
-- 🔒`POST /tasks` creates a new task owned by the logged-in user
-  - sends 400 if request body does not include `title` and `done`
-- 🔒`GET /tasks` sends array of all tasks owned by the logged-in user
-- 🔒`PUT /tasks/:id` updates the specific task owned by the logged-in user
-  - sends 400 if request body does not include `title` and `done`
-  - sends 403 Forbidden if user does not own this task
-- 🔒`DELETE /tasks/:id` deletes the specific task owned by the logged-in user
-  - sends 403 Forbidden if user does not own this task
+<!-- - 🔒`POST /tasks` creates a new task owned by the logged-in user
+  - sends 400 if request body does not include `title` and `done` -->
+
+<!-- - 🔒`GET /tasks` sends array of all tasks owned by the logged-in user -->
+
+<!-- - 🔒`PUT /tasks/:id` updates the specific task owned by the logged-in user -->
+  <!-- - sends 400 if request body does not include `title` and `done` -->
+  <!-- - sends 403 Forbidden if user does not own this task -->
+
+<!-- - 🔒`DELETE /tasks/:id` deletes the specific task owned by the logged-in user -->
+  <!-- - sends 403 Forbidden if user does not own this task -->
